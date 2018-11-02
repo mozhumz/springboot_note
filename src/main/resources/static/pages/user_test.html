@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/commonUtil.js"></script>
+</head>
+<body>
+	<button id="btn1">btn1</button>
+</body>
+<script type="text/javascript">
+	var arr=[];
+	for(var i=0;i<3;i++){
+		var obj={id:i,name:"name"+i,age:(20+i)}
+		arr.push(obj);
+	}
+	$("#btn1").click(function(){
+		console.log("btn1 click");
+		var url='../arrTest';
+		var param={name:"zhangsan",age:15,arr:arr};
+		var res=ajax(url,'post','application/json',param);
+		console.log(res);
+	});
+	
+	
+</script>
+</html>
