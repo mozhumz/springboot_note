@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/commonUtil.js"></script>
+</head>
+<body>
+<!-- 	<button id="btn1">btn1</button> -->
+<div>
+	姓名<input/>
+</div>
+<div>
+	性别<input/>
+</div>
+
+<div>
+	年龄<input/>
+</div>
+<div>
+	联系方式<input/>
+</div>
+<div>
+	就读学校<input/>
+</div>
+<div>
+	预约试听的校区<input/>
+</div>
+
+<button>确定</button>
+</body>
+<script type="text/javascript">
+	var arr=[];
+// 	for(var i=0;i<3;i++){
+// 		var obj={id:i,name:"name"+i,age:(20+i)}
+// 		arr.push(obj);
+// 	}
+	$("#btn1").click(function(){
+		console.log("btn1 click");
+		var url='../arrTest';
+		var param={name:"zhangsan",remark:"",unitUsers:arr};
+		var res=ajax(url,'post','application/json',param);
+		console.log(res);
+	});
+	
+	
+</script>
+</html>

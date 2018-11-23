@@ -7,7 +7,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Component;
 
-import com.hyj.demo.mapper.IUserMapper;
+import com.hyj.demo.dao.mapper.mapper1.IUserMapper;
 
 /**
  * @author huyuanjia

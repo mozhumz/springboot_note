@@ -10,7 +10,7 @@ import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.junit.Test;
 
-import com.hyj.demo.po.UserPO;  
+import com.hyj.demo.entity.po.po1.UserPO;
 
 public class ExcelTest {  
 	@Test
