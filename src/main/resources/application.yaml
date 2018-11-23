@@ -2,18 +2,20 @@
 spring:
   datasource:
     mongodb:
-      mycol:
+      primary:
         host: localhost
         port: 27017
-        database: mycol
-        username: mozhu 
-        password: 1234567 
-      admin: 
+        database: hyj
+        username: root
+        password: Mz52610
+        authenticationDatabase: admin
+      second: 
         host: localhost
         port: 27017
         database: admin
-        username: mozhu 
-        password: 123456 
+        username: mozhu
+        password: Mz52610
+        authenticationDatabase: admin 
     druid:
       primary:
         url: jdbc:mysql://127.0.0.1:3306/hyj

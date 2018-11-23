@@ -2,9 +2,11 @@ package com.hyj.demo.service.impl;
 
 import javax.annotation.Resource;
 
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
-import com.hyj.demo.config.data_source.mongo.AdminMongoTemplate;
+import com.hyj.demo.config.data_source.mongo.PrimaryMongoConfig;
+import com.hyj.demo.config.data_source.mongo.SecondaryMongoConfig;
 import com.hyj.demo.dao.mongo.mongo1.ICustomerRepository;
 import com.hyj.demo.dao.mongo.mongo2.ITestRepository;
 import com.hyj.demo.entity.po.mongo.Customer;
@@ -18,18 +20,27 @@ import com.hyj.demo.service.IMongoService;
 */
 @Service("mongoService")
 public class MongoServiceImpl implements IMongoService {
-	@Resource
-	private ICustomerRepository customerRepository;
+//	@Resource
+//	private ICustomerRepository customerRepository;
+//	
+//	@Resource
+//	private ITestRepository testRepository;
 	
 	@Resource
-	private ITestRepository testRepository;
+	private PrimaryMongoConfig primaryMongoConfig;
+	
+	@Resource
+	private SecondaryMongoConfig secondaryMongoConfig;
+	
+	@Resource(name="mongoTemplate")
+	private MongoTemplate primaryMongoTemplate;
 
 	@Override
 	public void testMycol() {
 		// TODO Auto-generated method stub
 		Customer customer=new Customer();
 		customer.setCarNumber("1");
-		System.out.println(customerRepository.insert(customer));
+		primaryMongoTemplate.insert(customer);
 		
 	}
 
@@ -38,8 +49,7 @@ public class MongoServiceImpl implements IMongoService {
 		// TODO Auto-generated method stub
 		TestPO testPO=new TestPO();
 		testPO.setName("hyj");
-		System.out.println(testRepository.insert(testPO));
-		
+		secondaryMongoConfig.getMongoTemplate().insert(testPO);
 
 	}
 
