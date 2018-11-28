@@ -1,6 +1,21 @@
 #设置jdbc相关配置
 spring:
   datasource:
+    mongodb:
+      primary:
+        host: localhost
+        port: 27017
+        database: hyj
+        username: root
+        password: Mz52610
+        authenticationDatabase: admin
+      second:
+        host: localhost
+        port: 27017
+        database: admin
+        username: mozhu
+        password: Mz52610
+        authenticationDatabase: admin
     druid:
       primary:
         url: jdbc:mysql://127.0.0.1:3306/hyj
@@ -31,10 +46,10 @@ spring:
         test-while-idle: true
 #设置运行端口
 server:
-  port: 8082
+  port: 8081
   session:
     timeout: 10
-#设置字符编码集
+  #设置字符编码集
   tomcat:
     uri-encoding: utf-8
 
