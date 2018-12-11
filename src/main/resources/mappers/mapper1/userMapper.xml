@@ -2,37 +2,38 @@
                 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.hyj.demo.dao.mapper.mapper1.IUserMapper">
 
-<!-- 	<resultMap id="BaseResultMap" type="UserPO"> -->
-<!-- 		<id column="id" property="id" javaType="String" /> -->
-<!-- 		<result column="name" property="name" javaType="String" /> -->
-<!-- 		<result column="age" property="age" javaType="String" /> -->
-<!-- 	</resultMap> -->
+	<!-- <resultMap id="BaseResultMap" type="UserPO"> -->
+	<!-- <id column="id" property="id" javaType="String" /> -->
+	<!-- <result column="name" property="name" javaType="String" /> -->
+	<!-- <result column="age" property="age" javaType="String" /> -->
+	<!-- </resultMap> -->
 
-	<select id="getUserList" resultType="com.hyj.demo.entity.po.po1.UserPO">
+	<select id="getUserList"
+		resultType="com.hyj.demo.entity.po.po1.UserPO">
 		select * from user_po
 	</select>
-	
+
 	<insert id="addUserPO" parameterType="map">
 		insert into
 		user_po
 		set
-			name=#{name},
-			age=#{age},
-			arr=#{arr}	
+		name=#{name},
+		age=#{age},
+		arr=#{arr}
 	</insert>
-	
-	
-<insert id="insertList"  >
-    insert into user_po
-    (name,age,arr,createTime)
-    values
-    <foreach collection="list" item="it" separator=",">
-        (
-        #{it.name},
-        #{it.age},
-        #{it.arr},
-        unix_timestamp(now())
-        )
-    </foreach>
-</insert>
+
+
+	<insert id="insertList">
+		insert into user_po
+		(name,age,arr,createTime)
+		values
+		<foreach collection="list" item="it" separator=",">
+			(
+			#{it.name},
+			#{it.age},
+			#{it.arr},
+			unix_timestamp(now())
+			)
+		</foreach>
+	</insert>
 </mapper>

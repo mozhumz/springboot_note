@@ -3,14 +3,14 @@ spring:
   datasource:
     mongodb:
       primary:
-        host: localhost
+        host: 192.168.126.10
         port: 27017
         database: hyj
         username: root
         password: Mz52610
         authenticationDatabase: admin
       second: 
-        host: localhost
+        host: 192.168.126.10
         port: 27017
         database: admin
         username: mozhu
@@ -18,7 +18,7 @@ spring:
         authenticationDatabase: admin 
     druid:
       primary:
-        url: jdbc:mysql://127.0.0.1:3306/hyj?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://localhost:3306/hyj?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
         password: 123456
         driver-class-name: com.mysql.jdbc.Driver
@@ -32,9 +32,9 @@ spring:
         test-on-borrow: false
         test-while-idle: true
       secondary:
-        url: jdbc:mysql://mysql.ccp5v1hspgel.us-west-2.rds.amazonaws.com:3307/mozhu?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://localhost:3306/mozhu?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
-        password: Mz526100
+        password: 123456
         driver-class-name: com.mysql.jdbc.Driver
         time-between-eviction-runs-millis: 18800
         max-active: 10
@@ -46,7 +46,7 @@ spring:
         test-while-idle: true
 #设置运行端口
 server:
-  port: 8081
+  port: 8082
   session:
     timeout: 10
 #设置字符编码集

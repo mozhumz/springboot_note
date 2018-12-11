@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import com.mongodb.MongoClient;
 
@@ -16,7 +17,9 @@ import com.mongodb.MongoClient;
  *
  */
 @Configuration
-@ConfigurationProperties(prefix="spring.datasource.mongodb.primary")
+@ConfigurationProperties(prefix="spring.datasource.mongodb.primary" )
+@EnableMongoRepositories(basePackages = "com.hyj.demo.dao.mongo.mongo1",
+mongoTemplateRef = "mongoTemplate")
 public class PrimaryMongoConfig extends AbstractMongoConfig{
 
     /**

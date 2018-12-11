@@ -20,17 +20,17 @@ import com.hyj.demo.service.IMongoService;
 */
 @Service("mongoService")
 public class MongoServiceImpl implements IMongoService {
+	@Resource
+	private ICustomerRepository customerRepository;
+	
+	@Resource
+	private ITestRepository testRepository;
+	
 //	@Resource
-//	private ICustomerRepository customerRepository;
+//	private PrimaryMongoConfig primaryMongoConfig;
 //	
 //	@Resource
-//	private ITestRepository testRepository;
-	
-	@Resource
-	private PrimaryMongoConfig primaryMongoConfig;
-	
-	@Resource
-	private SecondaryMongoConfig secondaryMongoConfig;
+//	private SecondaryMongoConfig secondaryMongoConfig;
 	
 	@Resource(name="mongoTemplate")
 	private MongoTemplate primaryMongoTemplate;
@@ -39,18 +39,19 @@ public class MongoServiceImpl implements IMongoService {
 	public void testMycol() {
 		// TODO Auto-generated method stub
 		Customer customer=new Customer();
-		customer.setCarNumber("1");
-		primaryMongoTemplate.insert(customer);
+		customer.setCarNumber("2");
+//		primaryMongoTemplate.insert(customer);
 		
+		System.out.println(customerRepository.insert(customer));
 	}
 
 	@Override
 	public void testAdmin() {
 		// TODO Auto-generated method stub
 		TestPO testPO=new TestPO();
-		testPO.setName("hyj");
-		secondaryMongoConfig.getMongoTemplate().insert(testPO);
-
+		testPO.setName("hyj2");
+//		secondaryMongoConfig.getMongoTemplate().insert(testPO);
+			System.out.println(testRepository.insert(testPO));
 	}
 
 }
