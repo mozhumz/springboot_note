@@ -26,6 +26,32 @@ public class MongoController {
 		return 0;
 	}
 
+	@GetMapping("/importStudent")
+	@ApiOperation(value = "导入学生数据")
+	public int importStudent() {
+		try {
+			mongoService.importStudent2Mongo();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
+		return 0;
+	}
+
+	@GetMapping("/test2")
+	@ApiOperation(value = "导入学生数据")
+	public int test2() {
+		try {
+			mongoService.getStudentTotal();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
+		return 0;
+	}
+
+
+
 	
 
 }

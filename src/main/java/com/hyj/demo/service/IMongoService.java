@@ -8,4 +8,8 @@ public interface IMongoService {
 	void testMycol();
 	
 	void testAdmin();
+
+	void importStudent2Mongo();
+
+	void getStudentTotal();
 }
