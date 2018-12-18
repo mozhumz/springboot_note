@@ -3,14 +3,14 @@ spring:
   datasource:
     mongodb:
       primary:
-        host: 192.168.126.10
+        host: localhost
         port: 27017
         database: hyj
         username: root
         password: Mz52610
         authenticationDatabase: admin
       second: 
-        host: 192.168.126.10
+        host: localhost
         port: 27017
         database: roommanage
         username: mozhu
@@ -18,7 +18,7 @@ spring:
         authenticationDatabase: admin 
     druid:
       primary:
-        url: jdbc:mysql://localhost:3306/roommanage?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://localhost:3306/room_manage?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
         password: 123456
         driver-class-name: com.mysql.jdbc.Driver
@@ -32,7 +32,7 @@ spring:
         test-on-borrow: false
         test-while-idle: true
       secondary:
-        url: jdbc:mysql://localhost:3306/mozhu?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://localhost:3306/hyj?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
         password: 123456
         driver-class-name: com.mysql.jdbc.Driver
