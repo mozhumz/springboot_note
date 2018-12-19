@@ -1,6 +1,7 @@
 package com.hyj.demo.test;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -176,6 +177,12 @@ public class TestCase {
 		System.out.println(set);
 		System.out.println(list1);
 		System.out.println(aoo);
+	}
+	
+	@Test
+	public void testCmd() throws IOException {
+		Runtime.getRuntime().exec("C:/Windows/System32/cmd.exe mkdir  C:\\Users\\huyuanjia\\hhh");
+		System.out.println("ok");
 	}
 	
 
