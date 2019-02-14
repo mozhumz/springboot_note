@@ -1,49 +1,17 @@
-<!DOCTYPE html>
+
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/commonUtil.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>JavaScript»ñÈ¡¿Í»§¶ËIP[ÀûÓÃĞÂÀË½Ó¿Ú]</title>
 </head>
 <body>
-	<!-- 	<button id="btn1">btn1</button> -->
-	<div>
-		å§“å<input />
-	</div>
-	<div>
-		æ€§åˆ«<input />
-	</div>
-
-	<div>
-		å¹´é¾„<input />
-	</div>
-	<div>
-		è”ç³»æ–¹å¼<input />
-	</div>
-	<div>
-		å°±è¯»å­¦æ ¡<input />
-	</div>
-	<div>
-		é¢„çº¦è¯•å¬çš„æ ¡åŒº<input />
-	</div>
-
-	<button>ç¡®å®š</button>
-</body>
-<script type="text/javascript">
-	var arr=[];
-// 	for(var i=0;i<3;i++){
-// 		var obj={id:i,name:"name"+i,age:(20+i)}
-// 		arr.push(obj);
-// 	}
-	$("#btn1").click(function(){
-		console.log("btn1 click");
-		var url='../arrTest';
-		var param={name:"zhangsan",remark:"",unitUsers:arr};
-		var res=ajax(url,'post','application/json',param);
-		console.log(res);
-	});
-	
-	
+<script type="text/javascript" src="http://counter.sina.com.cn/ip/" charset="gb2312"></script>       <!--»ñÈ¡½Ó¿ÚÊı¾İ£¬×¢Òâcharset -->
+<script type="text/javascript"> 
+document.writeln("IPµØÖ·£º"+ILData[0]+"<br />");             //Êä³ö½Ó¿ÚÊı¾İÖĞµÄIPµØÖ· 
+document.writeln("µØÖ·ÀàĞÍ£º"+ILData[1]+"<br />");         //Êä³ö½Ó¿ÚÊı¾İÖĞµÄIPµØÖ·µÄÀàĞÍ 
+document.writeln("µØÖ·ÀàĞÍ£º"+ILData[2]+"<br />");         //Êä³ö½Ó¿ÚÊı¾İÖĞµÄIPµØÖ·µÄÊ¡ÊĞ
+document.writeln("µØÖ·ÀàĞÍ£º"+ILData[3]+"<br />");         //Êä³ö½Ó¿ÚÊı¾İÖĞµÄIPµØÖ·µÄ
+document.writeln("µØÖ·ÀàĞÍ£º"+ILData[4]+"<br />");         //Êä³ö½Ó¿ÚÊı¾İÖĞµÄIPµØÖ·µÄÔËÓªÉÌ
 </script>
+</body>
 </html>

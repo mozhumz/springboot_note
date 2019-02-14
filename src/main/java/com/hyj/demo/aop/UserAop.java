@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserAop {
 
 
-    @Pointcut("execution(* com.hyj.demo.web.controller.demo.*(..)))")
+    @Pointcut("execution(* com.hyj.demo.web.controller.*.*(..)))")
     public void userControllerPoingtCut(){}
 
     /**

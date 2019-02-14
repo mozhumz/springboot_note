@@ -87,7 +87,7 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	@Scheduled(initialDelay = 1000 * 100, fixedRate = 1000 * 100)
+	@Scheduled(cron = "0 0 2 1 * ?")
 	public void testSchedule() {
 		// TODO Auto-generated method stub
 		System.out.println("service testSchedule ok");

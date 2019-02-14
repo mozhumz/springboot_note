@@ -180,10 +180,16 @@ public class TestCase {
 	}
 	
 	@Test
-	public void testCmd() throws IOException {
-		Runtime.getRuntime().exec("C:/Windows/System32/cmd.exe mkdir  C:\\Users\\huyuanjia\\hhh");
-		System.out.println("ok");
+	public void testCmd()  {
+		double a=80+70.95+77+149+39+16.8+10+13
+				+15+468+14+1128+468+4.46+99+29.98
+				+80+33.88+14+1+899+29+38.8+104.8
+				+119.8+38.8+748+79;
+//				+57+97+134+499+248+850.6+24.9+15.6;
+		System.out.println(a);
 	}
+	
+	
 	
 
 	public static Set getCombinedSet(List list1, List list2) {
