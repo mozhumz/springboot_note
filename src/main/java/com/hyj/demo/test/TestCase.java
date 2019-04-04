@@ -1,7 +1,7 @@
 package com.hyj.demo.test;
 
+
 import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -181,12 +181,9 @@ public class TestCase {
 	
 	@Test
 	public void testCmd()  {
-		double a=80+70.95+77+149+39+16.8+10+13
-				+15+468+14+1128+468+4.46+99+29.98
-				+80+33.88+14+1+899+29+38.8+104.8
-				+119.8+38.8+748+79;
-//				+57+97+134+499+248+850.6+24.9+15.6;
-		System.out.println(a);
+		Byte a=1;
+		Integer b=a.intValue();
+		System.out.println(b);
 	}
 	
 	

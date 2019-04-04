@@ -59,6 +59,13 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>1.3.1</version>
 		</dependency>
+		<!--tk mapper -->
+		<dependency>
+			<groupId>tk.mybatis</groupId>
+			<artifactId>mapper-spring-boot-starter</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>net.sf.json-lib</groupId>
 			<artifactId>json-lib</artifactId>
@@ -105,10 +112,10 @@
 			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
 		<!-- jpa -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-data-jpa</artifactId>-->
+		<!--</dependency>-->
 
 		<!-- 数据库连接池 -->
 		<dependency>
@@ -126,6 +133,8 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
+		
+		
 
 	</dependencies>
 
@@ -135,7 +144,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!--打包时 将项目制作成windows服务-->
+			<!--打包时 将项目制作成windows服务 -->
 			<plugin>
 				<groupId>cn.joylau.code</groupId>
 				<artifactId>joylau-springboot-daemon-windows</artifactId>
@@ -150,12 +159,12 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!--打包跳过测试-->
+			<!--打包跳过测试 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
-					<!--<testFailureIgnore>true</testFailureIgnore>-->
+					<!--<testFailureIgnore>true</testFailureIgnore> -->
 					<skipTests>true</skipTests>
 				</configuration>
 			</plugin>

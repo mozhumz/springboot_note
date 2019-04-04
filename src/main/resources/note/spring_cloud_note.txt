@@ -1,3 +1,5 @@
-1.postman关闭注册中心的服务，例子
+1.postman关闭注册中心的服务，请求类型为delete 例子 
 http://{注册中心}/eureka/apps/{服务名称}/{计算机启动的服务名称（注册中心可查）}
 http://172.16.170.82:8082/eureka/apps/WHUT-PUNISH/HYJ-WORK:whut-punish:8086
+注：剔除网关
+http://172.16.170.82:8082/eureka/HYJ-WORK:zjut-zuul:8099
