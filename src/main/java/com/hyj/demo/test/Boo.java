@@ -9,6 +9,8 @@ public class Boo {
 		
 		private String name;
 		
+		private Integer c;
+		
 		public void setName(String name) {
 			this.name=name;
 			System.out.println("setName:"+(order++));

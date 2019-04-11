@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+                <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hyj.demo.dao.mapper.mapper2.IHyjTestMapper2">
+
+
+	<!--<resultMap id="BaseResultMap" type="com.hyj.demo.model.po.HyjTestPO">-->
+		<!--&lt;!&ndash;-->
+          <!--WARNING - @mbg.generated-->
+        <!--&ndash;&gt;-->
+		<!--<id column="id"  property="id" />-->
+		<!--<result column="create_date"  property="createDate" />-->
+	<!--</resultMap>-->
+
+	<!--<sql id="Base_Column_List">-->
+
+		<!--id, create_date-->
+	<!--</sql>-->
+
+	<select id="findOne" resultType="com.hyj.demo.model.po.HyjTestPO">
+		select * from t_hyj_test limit 1
+	</select>
+</mapper>
