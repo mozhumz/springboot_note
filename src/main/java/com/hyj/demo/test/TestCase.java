@@ -2,6 +2,10 @@ package com.hyj.demo.test;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -18,6 +22,7 @@ import com.hyj.demo.entity.po.po1.UserPO;
 import com.hyj.demo.vo.Student;
 
 import lombok.Data;
+import org.springframework.util.StreamUtils;
 
 /**
  * 
@@ -180,13 +185,41 @@ public class TestCase {
 	}
 	
 	@Test
-	public void testCmd()  {
-		double a=80+70.95+77+149+39+16.8+10+13
-				+15+468+14+1128+468+4.46+99+29.98
-				+80+33.88+14+1+899+29+38.8+104.8
-				+119.8+38.8+748+79;
-//				+57+97+134+499+248+850.6+24.9+15.6;
-		System.out.println(a);
+	public void testRomote()  {
+		try {
+//			URL url=new URL("https://way.jd.com/jisuapi/query4");
+			URL url=new URL("https://api.weixin.qq.com/sns/jscode2session?appid=wx1ab77cd8aa009352&secret=a6be98c950b147dd357c2379308ca421&js_code=" +
+					"023x9YE42NsB0Q0YedI427seF42x9YEg&rant_type=authorization_code");
+			HttpURLConnection connection= (HttpURLConnection) url.openConnection();
+			connection.setRequestMethod("GET");
+			//需要传参
+//			connection.setDoOutput(true);
+//			//参数拼接
+//			StringBuilder param=new StringBuilder();
+//			param.append("shouji=13456755448").append("&appkey=e642c4a894119be1656f3af864173530");
+//			connection.getOutputStream().write(param.toString().getBytes("utf-8"));
+			//发起请求
+			connection.connect();
+			//接受响应信息
+			String res= StreamUtils.copyToString(connection.getInputStream(), Charset.forName("utf-8"));
+			System.out.println(res);
+
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testCount() {
+		double a=-868.1-492.4-45-69+31.86+512.1+218+36.64-138+225-368
+				+69+75+249+219-249+378+139.7+69-69+29.8+168.2-41.16-138+138
+				+41.16-99-58+157+22+5+25+47.78+42+138+95+199+128+123+108
+				-128-108-123+99.98-59-399+369+399+128+226+93-93-129.38+479+
+				22.05-139+83+98+139+33.9+29+29+36+80.5+98+89+103;
+		
+		System.out.println(a+868.1+492.4+45+69);
 	}
 	
 	

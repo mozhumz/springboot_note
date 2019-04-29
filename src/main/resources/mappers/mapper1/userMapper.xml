@@ -12,6 +12,7 @@
 		resultType="com.hyj.demo.entity.po.po1.UserPO">
 		select * from user_po
 	</select>
+	
 
 	<insert id="addUserPO" parameterType="map">
 		insert into
@@ -36,4 +37,5 @@
 			)
 		</foreach>
 	</insert>
+	
 </mapper>

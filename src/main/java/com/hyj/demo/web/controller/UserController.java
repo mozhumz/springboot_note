@@ -56,6 +56,11 @@ public class UserController {
  		System.out.println(us);
 		return us;
 	}
+
+	@GetMapping("/test0317")
+	public Integer test0317() {
+		return 1;
+	}
 	
 	@ApiOperation(value = "用工单位管理-设岗单位列表-编辑设岗单位," +
             "name: 单位名称" +

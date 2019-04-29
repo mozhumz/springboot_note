@@ -10,4 +10,6 @@
     <select id="findStudentPOListTotal"  resultType="int">
         select count(id) from t_student
     </select>
+    
+    
 </mapper>
