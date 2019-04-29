@@ -192,15 +192,6 @@ public class TestCase {
 		System.out.println(b);
 	}
 
-	@Test
-	public void testCount() {
-		double a=-369-98-83-103-98+248+91-328+486+29+39;
-		Boo boo=new Boo();
-		boo.setC(1);
-		Integer cInteger=boo.getC();
-		boo.setC(2);
-		System.out.println(cInteger);
-//		System.out.println(a);
 	public void testRomote()  {
 		try {
 //			URL url=new URL("https://way.jd.com/jisuapi/query4");
