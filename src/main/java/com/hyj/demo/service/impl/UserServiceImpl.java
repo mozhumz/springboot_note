@@ -7,7 +7,6 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import com.hyj.demo.dao.mapper.mapper2.IMysqlMapper;
-import com.hyj.demo.dao.repositry.repositry1.IUserRepositry;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.DuplicateKeyException;
@@ -28,8 +27,8 @@ public class UserServiceImpl implements IUserService {
 	@Resource
 	IMysqlMapper mysqlMapper;
 
-	@Resource
-	IUserRepositry userRepositry;
+//	@Resource
+//	IUserRepositry userRepositry;
 
 	@Override
 	public List<UserPO> getList() {
@@ -114,7 +113,7 @@ public class UserServiceImpl implements IUserService {
 		// TODO Auto-generated method stub
 		try {
 
-			userRepositry.save(userPO);
+//			userRepositry.save(userPO);
 		} catch (DataIntegrityViolationException e) {
 			// TODO: handle exception
 			e.printStackTrace();

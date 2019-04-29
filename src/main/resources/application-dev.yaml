@@ -46,7 +46,7 @@ spring:
         test-while-idle: true
 #设置运行端口
 server:
-  port: 8082
+  port: 8083
   session:
     timeout: 10
 #设置字符编码集

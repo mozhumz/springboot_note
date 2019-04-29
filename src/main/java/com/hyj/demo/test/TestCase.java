@@ -1,5 +1,6 @@
 package com.hyj.demo.test;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -185,6 +186,21 @@ public class TestCase {
 	}
 	
 	@Test
+	public void testCmd()  {
+		Byte a=1;
+		Integer b=a.intValue();
+		System.out.println(b);
+	}
+
+	@Test
+	public void testCount() {
+		double a=-369-98-83-103-98+248+91-328+486+29+39;
+		Boo boo=new Boo();
+		boo.setC(1);
+		Integer cInteger=boo.getC();
+		boo.setC(2);
+		System.out.println(cInteger);
+//		System.out.println(a);
 	public void testRomote()  {
 		try {
 //			URL url=new URL("https://way.jd.com/jisuapi/query4");
@@ -210,7 +226,7 @@ public class TestCase {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Test
 	public void testCount() {
 		double a=-868.1-492.4-45-69+31.86+512.1+218+36.64-138+225-368
@@ -218,7 +234,7 @@ public class TestCase {
 				+41.16-99-58+157+22+5+25+47.78+42+138+95+199+128+123+108
 				-128-108-123+99.98-59-399+369+399+128+226+93-93-129.38+479+
 				22.05-139+83+98+139+33.9+29+29+36+80.5+98+89+103;
-		
+
 		System.out.println(a+868.1+492.4+45+69);
 	}
 	
