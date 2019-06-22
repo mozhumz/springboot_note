@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.Timer;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
@@ -219,14 +220,10 @@ public class TestCase {
 	}
 
 	@Test
-	public void testCount() {
-		double a=-868.1-492.4-45-69+31.86+512.1+218+36.64-138+225-368
-				+69+75+249+219-249+378+139.7+69-69+29.8+168.2-41.16-138+138
-				+41.16-99-58+157+22+5+25+47.78+42+138+95+199+128+123+108
-				-128-108-123+99.98-59-399+369+399+128+226+93-93-129.38+479+
-				22.05-139+83+98+139+33.9+29+29+36+80.5+98+89+103;
-
-		System.out.println(a+868.1+492.4+45+69);
+	public void testTask() {
+		Timer timer=new Timer();
+		timer.schedule(new Task1(), 5000);
+		timer.schedule(new Task2(), 3000);
 	}
 	
 	
