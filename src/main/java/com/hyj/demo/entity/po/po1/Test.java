@@ -3,11 +3,11 @@
  */
 package com.hyj.demo.entity.po.po1;
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
-import lombok.Data;
 
 /**
  * @author huyuanjia

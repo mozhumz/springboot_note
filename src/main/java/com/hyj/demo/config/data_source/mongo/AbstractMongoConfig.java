@@ -1,17 +1,15 @@
 package com.hyj.demo.config.data_source.mongo;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.mongodb.MongoClient;
+import com.mongodb.MongoCredential;
+import com.mongodb.ServerAddress;
+import lombok.Data;
 import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 
-import com.mongodb.MongoClient;
-import com.mongodb.MongoCredential;
-import com.mongodb.ServerAddress;
-
-import lombok.Data;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 public abstract class AbstractMongoConfig{

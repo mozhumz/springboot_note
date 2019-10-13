@@ -89,7 +89,7 @@
         <dependency>
             <groupId>com.github.mozhumz</groupId>
             <artifactId>common_util</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.8</version>
         </dependency>
 
         <!-- poi -->

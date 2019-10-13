@@ -1,23 +1,19 @@
 package com.hyj.demo.service.impl;
 
+import com.hyj.demo.dao.mapper.mapper1.IUserMapper;
+import com.hyj.demo.dao.mapper.mapper2.IMysqlMapper;
+import com.hyj.demo.entity.po.po1.UserPO;
+import com.hyj.demo.service.IUserService;
+import net.sf.json.JSONArray;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Resource;
-
-import com.hyj.demo.dao.mapper.mapper2.IMysqlMapper;
-
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.dao.DuplicateKeyException;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Service;
-import com.hyj.demo.dao.mapper.mapper1.IUserMapper;
-import com.hyj.demo.entity.po.po1.UserPO;
-import com.hyj.demo.service.IUserService;
-import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
-
-import net.sf.json.JSONArray;
 
 @Service
 public class UserServiceImpl implements IUserService {

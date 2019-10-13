@@ -1,9 +1,9 @@
 package com.hyj.demo.aop;
+
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 

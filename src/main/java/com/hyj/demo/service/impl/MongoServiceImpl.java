@@ -1,22 +1,19 @@
 package com.hyj.demo.service.impl;
 
-import javax.annotation.Resource;
-
 import com.hyj.demo.dao.mapper.mapper1.IStudentMapper;
-import com.hyj.demo.dao.mongo.mongo2.IStudentMongoRepository;
-import com.hyj.demo.model.po.StudentPO;
-import com.hyj.demo.model.qo.BaseQo;
-import com.hyj.demo.util.MongoUtil;
-import com.mongodb.BasicDBObject;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.stereotype.Service;
-
 import com.hyj.demo.dao.mongo.mongo1.ICustomerRepository;
+import com.hyj.demo.dao.mongo.mongo2.IStudentMongoRepository;
 import com.hyj.demo.dao.mongo.mongo2.ITestRepository;
 import com.hyj.demo.entity.po.mongo.Customer;
 import com.hyj.demo.entity.po.mongo.TestPO;
+import com.hyj.demo.model.po.StudentPO;
+import com.hyj.demo.model.qo.BaseQo;
 import com.hyj.demo.service.IMongoService;
+import com.hyj.demo.util.MongoUtil;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;

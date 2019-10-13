@@ -1,16 +1,8 @@
 package com.hyj.demo.po;
 
-import java.util.List;
-import java.util.Map;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 import lombok.Data;
-import net.sf.json.JSONObject;
+
+import javax.persistence.*;
 
 @Data
 @Entity

@@ -1,7 +1,6 @@
 package com.hyj.demo.excel;
 
-import java.io.FileOutputStream;
-
+import com.hyj.demo.entity.po.po1.UserPO;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -10,7 +9,7 @@ import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.junit.Test;
 
-import com.hyj.demo.entity.po.po1.UserPO;
+import java.io.FileOutputStream;
 
 public class ExcelTest {  
 	@Test

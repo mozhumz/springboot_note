@@ -1,9 +1,8 @@
 package com.hyj.demo.dao.mongo.mongo1;
 
+import com.hyj.demo.entity.po.mongo.Customer;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
-
-import com.hyj.demo.entity.po.mongo.Customer;
 
 /** 
 * @author mozhumz 

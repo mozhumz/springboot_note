@@ -1,8 +1,9 @@
 package com.hyj.demo.service;
 
+import com.hyj.demo.entity.po.po1.UserPO;
+
 import java.util.List;
 import java.util.Map;
-import com.hyj.demo.entity.po.po1.UserPO;
 
 public interface IUserService {
   List<UserPO> getList();

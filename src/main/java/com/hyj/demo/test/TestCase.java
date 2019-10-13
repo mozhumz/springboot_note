@@ -1,6 +1,14 @@
 package com.hyj.demo.test;
 
 
+import com.hyj.demo.constant.OutExcelEnum;
+import com.hyj.demo.entity.po.po1.UserPO;
+import com.hyj.demo.vo.Student;
+import lombok.Data;
+import org.junit.Test;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StreamUtils;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -8,23 +16,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.Timer;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.stream.Collectors;
-
-import org.junit.Test;
-import org.springframework.stereotype.Component;
-import com.hyj.demo.constant.OutExcelEnum;
-import com.hyj.demo.entity.po.po1.UserPO;
-import com.hyj.demo.vo.Student;
-
-import lombok.Data;
-import org.springframework.util.StreamUtils;
 
 /**
  * 
