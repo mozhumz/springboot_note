@@ -5,7 +5,10 @@ import org.junit.Test;
 
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Array;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 
 public class BaseCase {
     @Test
@@ -110,4 +113,76 @@ public class BaseCase {
         }
     }
 
+    @Test
+    public void testMath(){
+        System.out.println(Math.round(-1.51));
+        System.out.println(Math.floor(-1.51+0.5));
+    }
+
+    @Test
+    public void testStr(){
+        String a1="1";
+        String a2=new String("1");
+        String a3=new String("1");
+        System.out.println(a1==a2);
+        System.out.println(a2==a3);
+
+    }
+
+    /**
+     * 编译期无法确定
+     * 这里面虽然将s1用final修饰了，但是由于其赋值是通过方法调用返回的，那么它的值只能在运行期间确定
+     * 因此s0和s2指向的不是同一个对象，故上面程序的结果为false。
+     */
+    @Test
+    public void testStr2(){
+        String s0 = "ab";
+        final String s1 = getS1();
+        String s2 = "a" + s1;
+        System.out.println((s0 == s2)); //result = false
+    }
+
+    public String getS1() {
+        return "b";
+    }
+
+    @Test
+    public void testStr3(){
+        String s0 = "ab";
+        String s1=new String("ab").intern();
+        System.out.println(s0==s1);
+    }
+
+    @Test
+    public void testDate(){
+        String start_date = null;
+        String end_date = null;
+        Date curr_date = new Date();
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyyMMddHHmmss");
+        end_date = simpleDateFormat.format(curr_date);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(curr_date);
+        calendar.add(Calendar.DATE, -1);
+        curr_date = calendar.getTime();
+        start_date = simpleDateFormat.format(curr_date);
+
+        System.out.println(start_date);
+        System.out.println(end_date);
+    }
+
+    @Test
+    public void testStrUrl(){
+        String s=null;
+        String url_prd="http://10.0.14.128:9001";
+        String url_pre="http://10.0.14.119:8080";
+        String url_test="http://10.0.14.119:8080/WP_LZLJ_SOA/APP_BIGDATA_SERVICES/Proxy_Services/LZLJ_392_BI_MonthlyQuotaChange_PS";
+        if(url_test.startsWith(url_pre)){
+             s=url_test.replace(url_pre,url_prd);
+        }
+        System.out.println(s);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Calendar.getInstance().get(Calendar.DAY_OF_YEAR));
+    }
 }

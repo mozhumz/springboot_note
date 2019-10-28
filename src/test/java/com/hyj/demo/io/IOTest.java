@@ -66,10 +66,13 @@ public class IOTest {
                 new FileReader(fileStr)
         );
         String str = null;
+        StringBuilder stringBuilder=new StringBuilder();
         while ((str = bufferedReader.readLine()) != null) {
             System.out.println(str);
+            stringBuilder.append(str);
         }
         bufferedReader.close();
+        System.out.println(stringBuilder.toString());
 
 
     }
