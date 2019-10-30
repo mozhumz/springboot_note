@@ -1,15 +1,19 @@
 package com.hyj.demo.base;
 
 import com.hyj.demo.model.po.Aoo;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
-
+@Slf4j
 public class BaseCase {
     @Test
     public void testInt() {
@@ -182,7 +186,26 @@ public class BaseCase {
         System.out.println(s);
     }
 
-    public static void main(String[] args) {
-        System.out.println(Calendar.getInstance().get(Calendar.DAY_OF_YEAR));
+    @Test
+    public void testStringBuilder(){
+        StringBuilder stringBuilder=new StringBuilder();
+    }
+
+    public static void main(String[] args) throws IOException {
+        //创建输出流对象
+        File f=new File("H:\\work\\tmp\\test\\a.txt");
+        if(!f.exists()){
+            new File(f.getParent()).mkdirs();
+//            f.createNewFile();
+        }
+        FileWriter fw = new FileWriter("H:\\work\\tmp\\test\\a.txt");
+        //写一个字符串数据
+        fw.write("IO流很舒服");
+        //因为数据没有直接写入文件，而是写到了内存缓冲区，所以需要用flush()方法进行刷新缓冲区，使数据进入文件中
+        fw.flush();
+        //释放资源
+        fw.close();
+
+
     }
 }
