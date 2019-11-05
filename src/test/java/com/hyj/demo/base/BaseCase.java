@@ -4,15 +4,16 @@ import com.hyj.demo.model.po.Aoo;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 @Slf4j
 public class BaseCase {
     @Test
@@ -158,6 +159,14 @@ public class BaseCase {
     }
 
     @Test
+    public void testStr4(){
+        String str="sswwww     fff";
+        str=str.replace("$$companyId$$","");
+        str=str.replaceAll("\\s*","");
+        System.out.println(str);
+    }
+
+    @Test
     public void testDate(){
         String start_date = null;
         String end_date = null;
@@ -191,6 +200,44 @@ public class BaseCase {
         StringBuilder stringBuilder=new StringBuilder();
     }
 
+
+    @Test
+    public void testTrim(){
+        String lrbReq="H:\\work\\tmp\\sap\\请求和相应参数\\esb-563-req.txt";
+        String str=getReq(lrbReq);
+        System.out.println(str);
+        System.out.println(trimXml(str));
+    }
+    public static String trimXml(String xml){
+        Pattern p = Pattern.compile(">(\\s*|\n|\t|\r)<");
+        Matcher m = p.matcher(xml);
+        return  m.replaceAll("><");
+    }
+
+
+    private static String getReq(String fileName)  {
+        BufferedReader bufferedReader=null;
+        try {
+            bufferedReader=new BufferedReader(new FileReader(fileName));
+            String str = null;
+            StringBuilder stringBuilder=new StringBuilder();
+            while ((str = bufferedReader.readLine()) != null) {
+                stringBuilder.append(str);
+            }
+            return stringBuilder.toString();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                bufferedReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
     public static void main(String[] args) throws IOException {
         //创建输出流对象
         File f=new File("H:\\work\\tmp\\test\\a.txt");
@@ -205,7 +252,6 @@ public class BaseCase {
         fw.flush();
         //释放资源
         fw.close();
-
 
     }
 }
