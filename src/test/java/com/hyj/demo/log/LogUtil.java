@@ -1,16 +1,19 @@
 package com.hyj.demo.log;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.PrintStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 public class LogUtil {
     public static final Logger logger=Logger.getGlobal();
     static {
         logger.setLevel(Level.INFO);
 
     }
-
+    public static final SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     private static final String DELIM_STR = "{}";
     private static final Object[] EMPTY_ARGS = new Object[0];
     private static void log(PrintStream printStream,int level, String format, Object ... args){
@@ -35,9 +38,13 @@ public class LogUtil {
         buffer.append(format.substring(beginIndex,format.length()));
         Thread currentThread = Thread.currentThread();
         StackTraceElement stackTrace = currentThread.getStackTrace()[level];
-        printStream.printf("[%s] (%s:%d) %s\n",
+        printStream.printf("%s --- [%s] (%s:%d): %s\n",
+                sdf.format(new Date()),
+                //当前线程名称
                 currentThread.getName(),
-                stackTrace.getFileName(),
+                //文件名
+                stackTrace.getClassName(),
+                //行号
                 stackTrace.getLineNumber(),
                 buffer.toString());
     }
@@ -47,7 +54,7 @@ public class LogUtil {
      * <pre>
      * log("name : {},age:{}","tom",23);
      * </pre>
-     * @param printStream
+     * @param printStream 如System.out
      * @param format 格式字符串,采用{@code '{}'}为占位符,占位符个数要与{@code args}数组长度匹配
      * @param args
      */
@@ -64,5 +71,8 @@ public class LogUtil {
         log(System.out,3,format,args);
     }
 
+    public static void log(String info){
+        log(System.out,3,info,null);
+    }
 
 }
