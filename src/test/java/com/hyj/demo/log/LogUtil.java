@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+@Slf4j
 public class LogUtil {
     public static final Logger logger=Logger.getGlobal();
     static {

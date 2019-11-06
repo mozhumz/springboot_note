@@ -1,34 +1,20 @@
-<soapenv:Envelope  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
-    <soap:Header  xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-    </soap:Header>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">
+    <soapenv:Header/>
     <soapenv:Body>
-        <lzlj:LZLJ_563_BI_SystemProfitList  xmlns:lzlj="http://www.ekingwin.com/esb/LZLJ_563_BI_SystemProfitList">
-            <lzlj:HEAD>
-                <lzlj:BIZTRANSACTIONID>LZLJ_BI_20191030091203222</lzlj:BIZTRANSACTIONID>
-                <lzlj:COUNT>1</lzlj:COUNT>
-                <lzlj:CONSUMER>BI</lzlj:CONSUMER>
-                <lzlj:SRVLEVEL>1</lzlj:SRVLEVEL>
-                <lzlj:ACCOUNT/>
-                <lzlj:PASSWORD/>
-                <lzlj:USE/>
-                <lzlj:COMMENTS/>
-                <lzlj:COMPANY>5116</lzlj:COMPANY>
-            </lzlj:HEAD>
-            <lzlj:LIST>
-                <!--Optional:-->
-                <lzlj:Check/>
-                <lzlj:PMon>01</lzlj:PMon>
-                <lzlj:PYear>2019</lzlj:PYear>
-                <lzlj:SRbukrs>
-                    <!--Zero or more repetitions:-->
-                    <lzlj:item>
-                        <lzlj:Sign>I</lzlj:Sign>
-                        <lzlj:Option>EQ</lzlj:Option>
-                        <lzlj:Low>5116</lzlj:Low>
-                        <lzlj:High>5999</lzlj:High>
-                    </lzlj:item>
-                </lzlj:SRbukrs>
-            </lzlj:LIST>
-        </lzlj:LZLJ_563_BI_SystemProfitList>
+        <urn:ZmdmMas010>
+            <!--Optional:-->
+            <Check>X</Check>
+            <PMon>01</PMon>
+            <PYear>2019</PYear>
+            <SRbukrs>
+                <!--Zero or more repetitions:-->
+                <item>
+                    <Sign>I</Sign>
+                    <Option>BT</Option>
+                    <Low>1000</Low>
+                    <High>5999</High>
+                </item>
+            </SRbukrs>
+        </urn:ZmdmMas010>
     </soapenv:Body>
 </soapenv:Envelope>

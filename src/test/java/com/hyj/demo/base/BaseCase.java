@@ -93,8 +93,8 @@ public class BaseCase {
 
     @Test
     public void sort1() {
-        int[] numbers=new int[]{1,5,8,2,3,9,4};
-        bubbleSort(numbers,numbers.length);
+        int[] numbers = new int[]{1, 5, 8, 2, 3, 9, 4};
+        bubbleSort(numbers, numbers.length);
         for (int number : numbers) {
             System.out.println(number);
         }
@@ -107,7 +107,7 @@ public class BaseCase {
      * @param n
      */
     public void bubbleSort(int a[], int n) {
-        for (int i = 0; i < n-1 ; i++) {
+        for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
                 if (a[j] > a[j + 1]) {
                     int tmp = a[j];
@@ -119,18 +119,18 @@ public class BaseCase {
     }
 
     @Test
-    public void testMath(){
+    public void testMath() {
         System.out.println(Math.round(-1.51));
-        System.out.println(Math.floor(-1.51+0.5));
+        System.out.println(Math.floor(-1.51 + 0.5));
     }
 
     @Test
-    public void testStr(){
-        String a1="1";
-        String a2=new String("1");
-        String a3=new String("1");
-        System.out.println(a1==a2);
-        System.out.println(a2==a3);
+    public void testStr() {
+        String a1 = "1";
+        String a2 = new String("1");
+        String a3 = new String("1");
+        System.out.println(a1 == a2);
+        System.out.println(a2 == a3);
 
     }
 
@@ -140,7 +140,7 @@ public class BaseCase {
      * 因此s0和s2指向的不是同一个对象，故上面程序的结果为false。
      */
     @Test
-    public void testStr2(){
+    public void testStr2() {
         String s0 = "ab";
         final String s1 = getS1();
         String s2 = "a" + s1;
@@ -152,26 +152,26 @@ public class BaseCase {
     }
 
     @Test
-    public void testStr3(){
+    public void testStr3() {
         String s0 = "ab";
-        String s1=new String("ab").intern();
-        System.out.println(s0==s1);
+        String s1 = new String("ab").intern();
+        System.out.println(s0 == s1);
     }
 
     @Test
-    public void testStr4(){
-        String str="sswwww     fff";
-        str=str.replace("$$companyId$$","");
-        str=str.replaceAll("\\s*","");
+    public void testStr4() {
+        String str = "sswwww     fff";
+        str = str.replace("$$companyId$$", "");
+        str = str.replaceAll("\\s*", "");
         System.out.println(str);
     }
 
     @Test
-    public void testDate(){
+    public void testDate() {
         String start_date = null;
         String end_date = null;
         Date curr_date = new Date();
-        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyyMMddHHmmss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
         end_date = simpleDateFormat.format(curr_date);
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(curr_date);
@@ -184,51 +184,52 @@ public class BaseCase {
     }
 
     @Test
-    public void testStrUrl(){
-        String s=null;
-        String url_prd="http://10.0.14.128:9001";
-        String url_pre="http://10.0.14.119:8080";
-        String url_test="http://10.0.14.119:8080/WP_LZLJ_SOA/APP_BIGDATA_SERVICES/Proxy_Services/LZLJ_392_BI_MonthlyQuotaChange_PS";
-        if(url_test.startsWith(url_pre)){
-             s=url_test.replace(url_pre,url_prd);
+    public void testStrUrl() {
+        String s = null;
+        String url_prd = "http://10.0.14.128:9001";
+        String url_pre = "http://10.0.14.119:8080";
+        String url_test = "http://10.0.14.119:8080/WP_LZLJ_SOA/APP_BIGDATA_SERVICES/Proxy_Services/LZLJ_392_BI_MonthlyQuotaChange_PS";
+        if (url_test.startsWith(url_pre)) {
+            s = url_test.replace(url_pre, url_prd);
         }
         System.out.println(s);
     }
 
     @Test
-    public void testStringBuilder(){
-        StringBuilder stringBuilder=new StringBuilder();
+    public void testStringBuilder() {
+        StringBuilder stringBuilder = new StringBuilder();
     }
 
 
     @Test
-    public void testTrim(){
-        String lrbReq="H:\\work\\tmp\\sap\\请求和相应参数\\esb-563-req.txt";
-        String str=getReq(lrbReq);
+    public void testTrim() {
+        String lrbReq = "H:\\work\\tmp\\sap\\请求和相应参数\\esb-563-req.txt";
+        String str = getReq(lrbReq);
         System.out.println(str);
         System.out.println(trimXml(str));
     }
-    public static String trimXml(String xml){
+
+    public static String trimXml(String xml) {
         Pattern p = Pattern.compile(">(\\s*|\n|\t|\r)<");
         Matcher m = p.matcher(xml);
-        return  m.replaceAll("><");
+        return m.replaceAll("><");
     }
 
 
-    private static String getReq(String fileName)  {
-        BufferedReader bufferedReader=null;
+    private static String getReq(String fileName) {
+        BufferedReader bufferedReader = null;
         try {
-            bufferedReader=new BufferedReader(new FileReader(fileName));
+            bufferedReader = new BufferedReader(new FileReader(fileName));
             String str = null;
-            StringBuilder stringBuilder=new StringBuilder();
+            StringBuilder stringBuilder = new StringBuilder();
             while ((str = bufferedReader.readLine()) != null) {
                 stringBuilder.append(str);
             }
             return stringBuilder.toString();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 bufferedReader.close();
             } catch (IOException e) {
@@ -238,10 +239,12 @@ public class BaseCase {
         return null;
     }
 
-    public static void main(String[] args) throws IOException {
+
+    @Test
+    public void testFileWriter() throws IOException {
         //创建输出流对象
-        File f=new File("H:\\work\\tmp\\test\\a.txt");
-        if(!f.exists()){
+        File f = new File("H:\\work\\tmp\\test\\a.txt");
+        if (!f.exists()) {
             new File(f.getParent()).mkdirs();
 //            f.createNewFile();
         }
@@ -253,5 +256,28 @@ public class BaseCase {
         //释放资源
         fw.close();
 
+    }
+
+    @Test
+    public void testCacl() {
+        int a = 38860;
+        System.out.println(a / 290);
+    }
+
+    @Test
+    public void testLoop() {
+        int i = 0;
+        outer:
+        while (true) { // outer:定义了一个label标记
+            i++;
+            inner:
+            for (int j = 0; j < 10; j++) {// inner:定义了一个label标记
+                i += j;
+                if (j == 3)
+                    continue inner; // j==3时，跳转到inner标记点
+                break outer; // 结束循环，跳到outer标记点，不再继续for循环
+            }
+            continue outer; // 继续循环，跳到outer标记点，继续while循环
+        }
     }
 }
