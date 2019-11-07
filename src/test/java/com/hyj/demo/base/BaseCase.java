@@ -85,6 +85,9 @@ public class BaseCase {
         System.out.println(sr.get());
     }
 
+    /**
+     * Math.round表示四舍五入，四舍五入的原理是在参数上加0.5然后做向下取整
+     */
     @Test
     public void MathRound() {
         System.out.println(Math.round(-1.5));
@@ -131,6 +134,7 @@ public class BaseCase {
         String a3 = new String("1");
         System.out.println(a1 == a2);
         System.out.println(a2 == a3);
+        StringBuilder stringBuilder=new StringBuilder("ss");
 
     }
 

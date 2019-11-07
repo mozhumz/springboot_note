@@ -29,7 +29,11 @@ public class MapTest {
 
     }
 
-    public static void main(String[] args) {
+    /**
+     *
+     */
+    @Test
+    public  void testTree() {
         Map<String,Object> map = new TreeMap<String,Object>();
         Set set=new TreeSet();
         map.put("ss",new Boo());
@@ -37,5 +41,14 @@ public class MapTest {
         set.add(new Boo());
 
         System.out.println("ok");
+    }
+
+    @Test
+    public void testEq(){
+        HashMap<String, String>map1=new HashMap<>();
+        map1.put("k","k");
+        HashMap<String, String>map2=new HashMap<>();
+        map2.put("k","k");
+        System.out.println(map1.equals(map2));
     }
 }
