@@ -5,6 +5,7 @@ import com.hyj.demo.dao.mapper.mapper2.IHyjTestMapper2;
 import com.hyj.demo.model.po.HyjTestPO;
 import com.hyj.demo.service.IUserService;
 import io.swagger.annotations.Api;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Api(description = "user相关接口")
+@Slf4j
 public class TestController {
 	@Autowired
 	IUserService service;
