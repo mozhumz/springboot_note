@@ -27,7 +27,7 @@ public class LogUtil {
         StringBuilder buffer = new StringBuilder(format.length() + 64);
         int beginIndex = 0,endIndex=0,count=0;
         while((endIndex = format.indexOf(DELIM_STR, beginIndex))>=0){
-            buffer.append(format.substring(beginIndex, endIndex));
+            buffer.append(format, beginIndex, endIndex);
             try{
                 buffer.append(args[count++]);
             }catch(IndexOutOfBoundsException e){
@@ -36,7 +36,7 @@ public class LogUtil {
             }
             beginIndex = endIndex + DELIM_STR.length();
         }
-        buffer.append(format.substring(beginIndex,format.length()));
+        buffer.append(format.substring(beginIndex));
         Thread currentThread = Thread.currentThread();
         StackTraceElement stackTrace = currentThread.getStackTrace()[level];
         printStream.printf("%s --- [%s] (%s:%d): %s\n",
