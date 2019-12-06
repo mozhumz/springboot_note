@@ -6,8 +6,25 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ThreadTest {
+    private final Object lock=new Object();
+    private static final ExecutorService pool = Executors.newFixedThreadPool(20);
+
     public static void main(String[] args) throws InterruptedException {
+        Runnable runnable=new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("hello");
+                try {
+                    this.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        pool.submit(runnable);
+        pool.shutdown();
         new ThreadTest().test();
+        System.out.println("ok");
 
     }
 
@@ -21,10 +38,10 @@ public class ThreadTest {
 
         System.out.println("start...");
         Thread t=new Thread(runnable);
-        this.wait(1000);
+        lock.wait();
         t.start();
-        System.out.println("ok");
-        this.notify();
-        Executors.newFixedThreadPool(5);
+        System.out.println("test ok");
+        this.notifyAll();
+//        Executors.newFixedThreadPool(5);
     }
 }

@@ -49,23 +49,6 @@ public class Aoo {
         return Objects.hash(name, pub);
     }
 
-    public static void main(String[] args) {
-        Aoo aoo1=new Aoo();
-        aoo1.setName("1");
-        aoo1.setId(1L);
-        Aoo aoo2=new Aoo();
-        aoo2.setName("1");
-        aoo2.setId(12L);
-        Set set=new HashSet();
-        set.add(aoo1);
-        set.add(aoo2);
-//        set.forEach(i-> System.out.println(i));
-        HashMap hashMap=new HashMap();
-        hashMap.put(aoo1,aoo1);
-        hashMap.put(aoo2,aoo2);
-        hashMap.forEach((k,v)-> System.out.println("k:"+k+",v:"+v));
-
-    }
     static {
 
         CommonUtil.initLog("static block");

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header xmlns:sys="http://sys.controller.jeefw.com/"/>
+    <soapenv:Body xmlns:sys="http://sys.controller.jeefw.com/">
+        <lzlj:Response xmlns:lzlj="http://www.ekingwin.com/esb/LZLJ_390_BI_AdSuppiler">
+            <lzlj:SIGN/>
+            <lzlj:Message>
+                <DATA>
+                    <HEAD>
+                        <BIZTRANSACTIONID>string</BIZTRANSACTIONID>
+                        <RESULT/>
+                        <ERRORCODE/>
+                        <ERRORINFO/>
+                        <COMMENTS/>
+                        <SUCCESSCOUNT>1</SUCCESSCOUNT>
+                    </HEAD>
+                    <LIST>
+                        <ITEM>
+                            <data xmlns="http://byd.eai.sap" class="array">
+                                <e class="object">
+                                    <Id type="string">0011y000002fdBYAAY</Id>
+                                    <Name type="string">测试1</Name>
+                                    <attributes class="object">
+                                        <type type="string">Account</type>
+                                        <url type="string">/services/data/v47.0/sobjects/Account/0011y000002fdBYAAY
+                                        </url>
+                                    </attributes>
+                                </e>
+                            </data>
+                            <message xmlns="http://byd.eai.sap" type="string">获取数据成功</message>
+                            <suceess xmlns="http://byd.eai.sap" type="boolean">true</suceess>
+                        </ITEM>
+                    </LIST>
+                </DATA>
+                >
+            </lzlj:Message>
+        </lzlj:Response>
+    </soapenv:Body>
+</soapenv:Envelope>

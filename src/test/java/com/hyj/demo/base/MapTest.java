@@ -1,8 +1,11 @@
 package com.hyj.demo.base;
 
+import com.hyj.demo.model.po.Aoo;
 import com.hyj.demo.test.Boo;
 import org.junit.Test;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.*;
 
 public class MapTest {
@@ -46,9 +49,32 @@ public class MapTest {
     @Test
     public void testEq(){
         HashMap<String, String>map1=new HashMap<>();
-        map1.put("k","k");
+        map1.put("k","1");
         HashMap<String, String>map2=new HashMap<>();
         map2.put("k","k");
         System.out.println(map1.equals(map2));
+    }
+
+    @Test
+    public void testCapacity() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        Map map=new HashMap();
+        Method method=map.getClass().getDeclaredMethod("capacity");
+        method.setAccessible(true);
+        System.out.println(method.invoke(map));
+        map.put("1",1);
+        System.out.println(method.invoke(map));
+    }
+
+    @Test
+    public void testEq2(){
+        Map map=new HashMap();
+        Aoo aoo1=new Aoo();
+        aoo1.setName("1");
+
+        Aoo aoo2=new Aoo();
+        aoo1.setName("2");
+        map.put(aoo1,1);
+        map.put(aoo2,2);
+        System.out.println(1);
     }
 }
