@@ -1,5 +1,6 @@
 package com.hyj.demo.jvm;
 
+import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
 public class JvmBaseTest {
@@ -10,8 +11,9 @@ public class JvmBaseTest {
 		System.out.println(classLoader.getParent());
 		System.out.println(classLoader.getParent().getParent());
 		try {
-//			Class.forName("com.hyj.demo.jvm.Test1");
-			classLoader.loadClass("com.hyj.demo.jvm.Test1").newInstance();
+//			Class.forName("com.hyj.demo.jvm.Test1",true,classLoader);
+			Class.forName("com.hyj.demo.jvm.Test1");
+//			classLoader.loadClass("com.hyj.demo.jvm.Test1").newInstance();
 			System.out.println("ok");
 		} catch (Exception e) {
 			e.printStackTrace();

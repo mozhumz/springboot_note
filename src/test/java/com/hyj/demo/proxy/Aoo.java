@@ -10,6 +10,11 @@ public class Aoo {
 
 	private Aoo(){}
 
+	static {
+		 int a=1;
+		System.out.println(a);
+
+	}
 //	private Aoo(String name){
 //		this.name=name;
 //	}
