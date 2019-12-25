@@ -1,5 +1,6 @@
 package com.hyj.demo.base;
 
+import com.hyj.util.param.CheckParamsUtil;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -19,6 +20,7 @@ public class StringTest {
     @Test
     public void testStringBuffer() {
         StringBuffer stringBuffer = new StringBuffer("ss123");
+        if(CheckParamsUtil.check(""))
 //        stringBuffer.reverse();
 //        System.out.println(stringBuffer);
         stringBuffer.append("s");

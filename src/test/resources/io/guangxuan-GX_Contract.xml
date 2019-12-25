@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="GBK"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header xmlns:lzlj="http://www.ekingwin.com/esb/LZLJ_381_BI_ContractSales"/>
+    <soapenv:Body xmlns:lzlj="http://www.ekingwin.com/esb/LZLJ_381_BI_ContractSales">
+        <lzlj:Response>
+            <lzlj:SIGN/>
+            <lzlj:Message>
+                <DATA>
+                    <HEAD>
+                        <BIZTRANSACTIONID>string</BIZTRANSACTIONID>
+                        <RESULT/>
+                        <ERRORCODE/>
+                        <ERRORINFO/>
+                        <COMMENTS/>
+                        <SUCCESSCOUNT>1</SUCCESSCOUNT>
+                    </HEAD>
+                    <LIST>
+                        <ITEM>
+                            <data xmlns="http://byd.eai.sap" class="array">
+                                <e class="object">
+                                    <BeginTime type="string">2018-05-31 00:00:00</BeginTime>
+                                    <ContractId type="string">2018071119054EB8860D8A43254AE594</ContractId>
+                                    <EndTime type="string">2018-11-30 00:00:00</EndTime>
+                                    <Products class="array">
+                                        <e class="object">
+                                            <ContractContractElementId type="string">2018082309294A04A73C18D8AFC3CF0F
+                                            </ContractContractElementId>
+                                            <ContractId type="string">2018071119054EB8860D8A43254AE594</ContractId>
+                                            <DistributeTypeCode type="string">10</DistributeTypeCode>
+                                            <DistributeTypeId type="string">70CB84CE-BD33-40AE-83DD-825248D96CB0
+                                            </DistributeTypeId>
+                                            <DistributeTypeName type="string">经销</DistributeTypeName>
+                                            <DistributionChannelId type="string">20</DistributionChannelId>
+                                            <DistributionChannelName type="string">批发</DistributionChannelName>
+                                            <Id type="string">20180823092949FEA651C78FC9A9EB28</Id>
+                                            <Item type="number">535</Item>
+                                            <ProductLevelId type="string">000020000600000001</ProductLevelId>
+                                            <ProductLevelName type="string">百年泸州老窖窖龄30年</ProductLevelName>
+                                            <RegionCode type="string">510500</RegionCode>
+                                            <RegionId type="string">F1B05A03-AC49-43AA-9D3E-E966BCAA29DF</RegionId>
+                                            <RegionName type="string">泸州市</RegionName>
+                                            <UsedAmount type="number">0.0</UsedAmount>
+                                            <UsedMoney type="number">0.0</UsedMoney>
+                                            <UsedTransaction type="number">0</UsedTransaction>
+                                        </e>
+                                        <e class="object">
+                                            <ContractContractElementId type="string">2018082309294A04A73C18D8AFC3CF0F
+                                            </ContractContractElementId>
+                                            <ContractId type="string">2018071119054EB8860D8A43254AE594</ContractId>
+                                            <DistributeTypeCode type="string">10</DistributeTypeCode>
+                                            <DistributeTypeId type="string">70CB84CE-BD33-40AE-83DD-825248D96CB0
+                                            </DistributeTypeId>
+                                            <DistributeTypeName type="string">经销</DistributeTypeName>
+                                            <DistributionChannelId type="string">20</DistributionChannelId>
+                                            <DistributionChannelName type="string">批发</DistributionChannelName>
+                                            <Id type="string">2018082309294CA5BE333CC9FF759838</Id>
+                                            <Item type="number">536</Item>
+                                            <ProductLevelId type="string">000020000600000002</ProductLevelId>
+                                            <ProductLevelName type="string">百年泸州老窖窖龄60年</ProductLevelName>
+                                            <RegionCode type="string">510500</RegionCode>
+                                            <RegionId type="string">F1B05A03-AC49-43AA-9D3E-E966BCAA29DF</RegionId>
+                                            <RegionName type="string">泸州市</RegionName>
+                                            <UsedAmount type="number">0.0</UsedAmount>
+                                            <UsedMoney type="number">0.0</UsedMoney>
+                                            <UsedTransaction type="number">0</UsedTransaction>
+                                        </e>
+                                    </Products>
+                                    <SalesTargetId type="string">2018082309294EB1909075523569ABE6</SalesTargetId>
+                                </e>
+                                <e class="object">
+                                    <BeginTime type="string">2019-02-14 00:00:00</BeginTime>
+                                    <ContractId type="string">2019021409224EFBAC3CA8E4A160D51A</ContractId>
+                                    <EndTime type="string">2020-02-14 00:00:00</EndTime>
+                                    <Products class="array">
+                                        <e class="object">
+                                            <ContractContractElementId type="string">2019021409224A0CB9BAC18AF1F7154D
+                                            </ContractContractElementId>
+                                            <ContractId type="string">2019021409224EFBAC3CA8E4A160D51A</ContractId>
+                                            <DistributeTypeCode type="string">18</DistributeTypeCode>
+                                            <DistributeTypeId type="string">EF611EEF-0CCF-40D1-BD39-AC4CB1E6C922
+                                            </DistributeTypeId>
+                                            <DistributeTypeName type="string">大型卖场</DistributeTypeName>
+                                            <DistributionChannelId type="string">20</DistributionChannelId>
+                                            <DistributionChannelName type="string">批发</DistributionChannelName>
+                                            <Id type="string">20190214092240638E182E8B991AF089</Id>
+                                            <Item type="number">589</Item>
+                                            <ProductLevelId type="string">0000200002</ProductLevelId>
+                                            <ProductLevelName type="string">精品特曲</ProductLevelName>
+                                            <RegionCode type="string">001</RegionCode>
+                                            <RegionId type="string">F5A55E1E-2F1D-4233-A8AB-161B09FB8481</RegionId>
+                                            <RegionName type="string">安徽省</RegionName>
+                                            <UsedAmount type="number">0.0</UsedAmount>
+                                            <UsedMoney type="number">0.0</UsedMoney>
+                                            <UsedTransaction type="number">0</UsedTransaction>
+                                        </e>
+                                    </Products>
+                                    <SalesTargetId type="string">2019021409224CF09171FB87F6A7E67A</SalesTargetId>
+                                </e>
+                                <e class="object">
+                                    <BeginTime type="string">2019-02-18 00:00:00</BeginTime>
+                                    <ContractId type="string">2019021817164DF5A45FB79ABBF4701A</ContractId>
+                                    <EndTime type="string">2019-12-18 00:00:00</EndTime>
+                                    <Products class="array">
+                                        <e class="object">
+                                            <ContractContractElementId type="string">2019021817164886BEC737B9F68140D7
+                                            </ContractContractElementId>
+                                            <ContractId type="string">2019021817164DF5A45FB79ABBF4701A</ContractId>
+                                            <DistributeTypeCode type="string">18</DistributeTypeCode>
+                                            <DistributeTypeId type="string">EF611EEF-0CCF-40D1-BD39-AC4CB1E6C922
+                                            </DistributeTypeId>
+                                            <DistributeTypeName type="string">大型卖场</DistributeTypeName>
+                                            <DistributionChannelId type="string">20</DistributionChannelId>
+                                            <DistributionChannelName type="string">批发</DistributionChannelName>
+                                            <Id type="string">201902181716474A87380781B02FD59E</Id>
+                                            <Item type="number">610</Item>
+                                            <LimitAmount type="number">1000.0</LimitAmount>
+                                            <ProductId type="string">000000000040004260</ProductId>
+                                            <ProductLevelId type="string">000020000600000002</ProductLevelId>
+                                            <ProductLevelName type="string">百年泸州老窖窖龄60年</ProductLevelName>
+                                            <ProductName type="string">38百年泸州老窖窖龄60年品鉴专用500ml*8</ProductName>
+                                            <RegionCode type="string">110000</RegionCode>
+                                            <RegionId type="string">297A496C-6577-4046-99FE-DB459A1CD28C</RegionId>
+                                            <RegionName type="string">北京市</RegionName>
+                                            <UsedAmount type="number">236.0</UsedAmount>
+                                            <UsedMoney type="number">118000.0</UsedMoney>
+                                            <UsedTransaction type="number">8</UsedTransaction>
+                                        </e>
+                                        <e class="object">
+                                            <ContractContractElementId type="string">2019021817164886BEC737B9F68140D7
+                                            </ContractContractElementId>
+                                            <ContractId type="string">2019021817164DF5A45FB79ABBF4701A</ContractId>
+                                            <DistributeTypeCode type="string">18</DistributeTypeCode>
+                                            <DistributeTypeId type="string">EF611EEF-0CCF-40D1-BD39-AC4CB1E6C922
+                                            </DistributeTypeId>
+                                            <DistributeTypeName type="string">大型卖场</DistributeTypeName>
+                                            <DistributionChannelId type="string">20</DistributionChannelId>
+                                            <DistributionChannelName type="string">批发</DistributionChannelName>
+                                            <Id type="string">20190218171649688786304FE61D5D11</Id>
+                                            <Item type="number">609</Item>
+                                            <LimitAmount type="number">1000.0</LimitAmount>
+                                            <ProductId type="string">000000000040008222</ProductId>
+                                            <ProductLevelId type="string">000020000600000001</ProductLevelId>
+                                            <ProductLevelName type="string">百年泸州老窖窖龄30年</ProductLevelName>
+                                            <ProductName type="string">43百年泸州老窖窖龄30年个人定制500ml*6</ProductName>
+                                            <RegionCode type="string">110000</RegionCode>
+                                            <RegionId type="string">297A496C-6577-4046-99FE-DB459A1CD28C</RegionId>
+                                            <RegionName type="string">北京市</RegionName>
+                                            <UsedAmount type="number">6.0</UsedAmount>
+                                            <UsedMoney type="number">6000.0</UsedMoney>
+                                            <UsedTransaction type="number">1</UsedTransaction>
+                                        </e>
+                                    </Products>
+                                    <SalesTargetId type="string">20190218171642AF95A48F36EAB7CB98</SalesTargetId>
+                                </e>
+                            </data>
+                            <message xmlns="http://byd.eai.sap" type="string">获取数据成功</message>
+                            <success xmlns="http://byd.eai.sap" type="boolean">true</success>
+                        </ITEM>
+                    </LIST>
+                </DATA>
+            </lzlj:Message>
+        </lzlj:Response>
+    </soapenv:Body>
+</soapenv:Envelope>

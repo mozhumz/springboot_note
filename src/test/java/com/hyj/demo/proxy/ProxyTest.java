@@ -23,4 +23,14 @@ public class ProxyTest {
 
 
 	}
+
+	@Test
+	public void testDynamic(){
+		IPerson man=new Man();
+		IPerson person= (IPerson) ProxyFactory.getProxyInstance(man);
+		person.walk();
+		IPerson person2= (IPerson) ProxyFactory.getProxyInstance2(Man.class);
+		person2.walk();
+
+	}
 }
