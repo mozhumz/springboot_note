@@ -1,0 +1,62 @@
+patch:
+#  "style/color_scheme": google_plus
+  "style/display_tray_icon": false
+#  "style/font_face": "Microsoft YaHei"
+  "style/font_point": 13
+  "style/horizontal": true
+#  "style/color_scheme": starcraft    # 这项用于选中下面定义的新方案
+#  "preset_color_schemes/starcraft":  # 在配色方案列表里加入标识为 starcraft 的新方案
+#    name: 星际我争霸／StarCraft
+#    author: Contralisk <contralisk@gmail.com>, original artwork by Blizzard Entertainment
+#    text_color: 0xccaa88             # 编码行文字颜色，24位色值，用十六进制书写方便些，顺序是蓝绿红0xBBGGRR
+#    candidate_text_color: 0x30bb55   # 候选项文字颜色，当与文字颜色不同时指定
+#    back_color: 0x000000             # 底色
+#    border_color: 0x1010a0           # 边框颜色，与底色相同则为无边框的效果
+#    hilited_text_color: 0xfecb96     # 高亮文字，即与当前高亮候选对应的那部份输入码
+#    hilited_back_color: 0x000000     # 设定高亮文字的底色，可起到凸显高亮部份的作用
+#    hilited_candidate_text_color: 0x60ffa8  # 高亮候选项的文字颜色，要醒目！
+#    hilited_candidate_back_color: 0x000000  # 高亮候选项的底色，若与背景色不同就会显出光棒
+
+  "style/font_face": "微软雅黑"
+#  "style/font_point": 14
+  # 內嵌編碼（僅支持TSF）
+  "style/inline_preedit": false
+  "style/layout/border_width": 0
+  "style/layout/border": 0
+  #候选字左右边距
+  "style/layout/margin_x": 8
+  #候选字上下边距
+  "style/layout/margin_y": 8
+  #候选字背景色色块高度若想候选字背景色块无边界填充候选框，仅需其高度和候选字上下边距一致即可
+  "style/layout/hilite_padding": 8
+  #序号和候选字之间的间隔
+  "style/layout/hilite_spacing": 3
+  #不知道干嘛的，在weasel下好像没有效果
+  "style/layout/spacing": 10
+  # 候选字间隔
+  "style/layout/candidate_spacing": 12
+  #候选字背景色块圆角幅度
+  "style/layout/round_corner": 5
+
+  # 這項用於選中下面定義的新方案
+  "style/color_scheme": Mxy
+  # 在配色方案列表裏加入標識爲 starcraft 的新方案
+  "preset_color_schemes/Mxy":
+    name: 兴宇／Mxy
+    author: Mxy
+    # 編碼行文字顏色，24位色值，用十六進制書寫方便些，順序是藍綠紅0xBBGGRR
+    text_color: 0x000000
+    # 候選項文字顏色，當與文字顏色不同時指定
+    #candidate_text_color
+    # 底色
+    back_color: 0xFCFCFC
+    # 邊框顏色，與底色相同則爲無邊框的效果
+    border_color: 0xFCFCFC
+    # 高亮文字，即與當前高亮候選對應的那部份輸入碼
+    #hilited_text_color: 0xfecb96
+    # 設定高亮文字的底色，可起到凸顯高亮部份的作用
+    #hilited_back_color: 0x000000
+    # 高亮候選項的文字顏色，要醒目！
+    hilited_candidate_text_color: 0xFFFFFF
+    # 高亮候選項的底色，若與背景色不同就會顯出光棒
+    hilited_candidate_back_color: 0xED9564

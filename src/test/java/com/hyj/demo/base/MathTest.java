@@ -1,5 +1,6 @@
 package com.hyj.demo.base;
 
+import com.hyj.util.param.CheckParamsUtil;
 import org.junit.Test;
 
 import java.util.ArrayList;
