@@ -3,13 +3,35 @@ package com.hyj.demo.base;
 import com.hyj.util.param.CheckParamsUtil;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class StringTest {
     @Test
     public void testStr() {
         String s = "ss";
         String str = new String("ww");
+        List<String> list=new ArrayList<>();
+        list.add("1");
+        list.add("2");
+        list.add("-1");
+//        System.out.println(list);
+        String str2="Hi:%s";
+        System.out.println(String.format(str2,list));
+    }
+
+    public String get(boolean f){
+        try {
+            if(f){
+
+                throw new RuntimeException("run");
+            }
+            System.out.println("xxxx");
+            return "hh";
+        }finally {
+            System.out.println("fin");
+        }
     }
 
     @Test
