@@ -1,6 +1,8 @@
 package com.hyj.demo.jvm;
 
+import com.hyj.demo.base.Loo;
 import org.junit.Test;
+import org.openjdk.jol.info.ClassLayout;
 
 public class JvmBaseTest {
 	/**
@@ -24,6 +26,18 @@ public class JvmBaseTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Test
+	public void test2(){
+		System.out.println("test2 start");
+		Loo l=new Loo();
+		System.out.println(ClassLayout.parseInstance(l).toPrintable());
+		synchronized (l){
+			System.out.println("locked----------------------------");
+			System.out.println(ClassLayout.parseInstance(l).toPrintable());
+		}
+		System.out.println("ok");
 	}
 
 

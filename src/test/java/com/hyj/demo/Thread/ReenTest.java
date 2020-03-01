@@ -3,9 +3,12 @@ package com.hyj.demo.Thread;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class ReenTest {
-
+    /**
+     * 必须为全局变量
+     */
+    static ReentrantLock reentrantLock=new ReentrantLock();
     public static void work(){
-        ReentrantLock reentrantLock=new ReentrantLock();
+
         reentrantLock.lock();
         try {
             String name=Thread.currentThread().getName();

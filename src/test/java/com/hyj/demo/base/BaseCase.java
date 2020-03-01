@@ -1,6 +1,7 @@
 package com.hyj.demo.base;
 
 import com.hyj.demo.model.po.Aoo;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -16,8 +17,14 @@ import java.util.regex.Pattern;
 public class BaseCase {
 	@Test
 	public void testSum() {
-		int sum = 29 + 13 + 10 + 19 + 137;
-		System.out.println(sum);
+		new Aoo2().test();
+	}
+	@Data
+	class Aoo2{
+		private int ws;
+		public void test(){
+			System.out.println(this);
+		}
 	}
 
 	@Test
