@@ -1,6 +1,9 @@
 package com.hyj.demo.util;
 
 import java.io.*;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -56,4 +59,75 @@ public class CommonUtil {
 			return writer.toString();
 		else return null;
 	}
+
+
+	/**
+	 * 实体类转map
+	 *
+	 * @param obj obj
+	 * @return Map Map
+	 */
+	public static Map<String, Object> objectToMap(Object obj) {
+		if (obj == null) {
+			return null;
+		}
+
+		Map<String, Object> map = new HashMap<String, Object>();
+
+		List<Field> declaredFields = getFields(obj.getClass());
+		for (Field field : declaredFields) {
+			field.setAccessible(true);
+			try {
+				map.put(field.getName(), field.get(obj));
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			}
+		}
+		return map;
+	}
+
+	public static List<Field> getFields(Class clazz){
+		List fieldsList = new ArrayList<Field>();
+		while (clazz != null) {  // 遍历所有父类字节码对象
+			Field[] declaredFields = clazz.getDeclaredFields();
+			fieldsList.addAll(Arrays.asList(declaredFields));  //将`Filed[]`数组转换为`List<>`然后再将其拼接至`ArrayList`上
+
+			clazz = clazz.getSuperclass();  // 获得父类的字节码对象
+		}
+		return fieldsList;
+	}
+
+	/**
+	 * map转实体
+	 *
+	 * @param map map
+	 * @param beanClass beanClass
+	 * @return Object Object
+	 */
+	public static Object mapToObject(Map<String, Object> map, Class<?> beanClass) {
+		if (map == null)
+			return null;
+		Object obj = null;
+		try {
+			obj = beanClass.newInstance();
+			List<Field> fields = getFields(obj.getClass());
+			for (Field field : fields) {
+				int mod = field.getModifiers();
+				if (Modifier.isStatic(mod) || Modifier.isFinal(mod)) {
+					continue;
+				}
+
+				field.setAccessible(true);
+				if (map.get(field.getName()) == null) {
+					continue;
+				}
+				field.set(obj, map.get(field.getName()));
+			}
+		} catch (Exception e) {
+			throw new RuntimeException("系统错误");
+		}
+
+		return obj;
+	}
+
 }

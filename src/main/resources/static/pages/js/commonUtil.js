@@ -9,7 +9,8 @@ function ajax(url,type,contentType,param){
 
 		　　},
 
-		　　success:function(res){　　//请求成功时的处理
+		　　success:function(res){　
+			　//请求成功时的处理
 				return res;
 		　　},
 		　　complete:function(){　　//请求完成时的处理
