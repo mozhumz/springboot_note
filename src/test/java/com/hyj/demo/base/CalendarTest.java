@@ -26,5 +26,6 @@ public class CalendarTest {
 		String start="20190101000000";
 		String end="20190201000000";
 		System.out.println(getDifference(start,end));
+		System.out.println(System.currentTimeMillis()-3600*1000*24*60L);
 	}
 }

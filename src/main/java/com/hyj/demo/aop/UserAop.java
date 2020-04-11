@@ -38,6 +38,7 @@ public class UserAop {
      */
     @Before("execution(* com.hyj.demo.web.controller.*.*(..))")
     public void beforeMethod(JoinPoint jp){
+        jp.getArgs();
         String methodName = jp.getSignature().getName();
         System.out.println("【前置通知】the method 【" + methodName + "】 begins with " + Arrays.asList(jp.getArgs()));
     }
