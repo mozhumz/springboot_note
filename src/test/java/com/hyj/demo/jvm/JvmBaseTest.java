@@ -33,12 +33,15 @@ public class JvmBaseTest {
 		System.out.println("test2 start");
 		Loo l=new Loo();
 		System.out.println(ClassLayout.parseInstance(l).toPrintable());
-		synchronized (l){
+		synchronized (l){//锁住的是对象 会修改对象头
 			System.out.println("locked----------------------------");
 			System.out.println(ClassLayout.parseInstance(l).toPrintable());
 		}
 		System.out.println("ok");
 	}
 
-
+	public static void main(String[] args) {
+		System.out.println("---");
+		Thread.currentThread().interrupt();
+	}
 }
