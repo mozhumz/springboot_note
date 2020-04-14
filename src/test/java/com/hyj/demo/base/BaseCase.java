@@ -17,7 +17,12 @@ import java.util.regex.Pattern;
 public class BaseCase {
 	@Test
 	public void testSum() {
-		new Aoo2().test();
+//		new Aoo2().test();
+		Aoo2 aoo1=new Aoo2();
+		final Aoo2 aoo2=aoo1;
+		aoo1.setWs(1);
+		System.out.println(aoo1);
+		System.out.println(aoo2);
 	}
 	@Data
 	class Aoo2{
