@@ -130,4 +130,9 @@ public class CommonUtil {
 		return obj;
 	}
 
+	public static String initLog(String s){
+		System.out.println(s);
+		return null;
+	}
+
 }

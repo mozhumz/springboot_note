@@ -28,17 +28,36 @@ public class JvmBaseTest {
 		}
 	}
 
+	/**
+	 * java对象的数据byte大小（8的倍数）组成：
+	 * 对象头（固定的12byte）:前8byte为mark word 后4byte（开启指针压缩后）为class metadata address
+	 * 补齐数据（不固定）
+	 * 实例数据（不固定）
+	 * 对象状态：无锁 偏向锁 轻量锁 重量锁 gc标记
+	 *synchronized锁的是mark word
+	 *
+	 *  OFFSET  SIZE      TYPE DESCRIPTION                               VALUE
+	 *       0     4           (object header)                           01 00 00 00 (00000001 00000000 00000000 00000000) (1)
+	 *       4     4           (object header)                           00 00 00 00 (00000000 00000000 00000000 00000000) (0)
+	 *       8     4           (object header)                           a3 1c 01 f8 (10100011 00011100 00000001 11111000) (-134144861)
+	 *      12     4       int Loo.i                                     0
+	 *      16     1   boolean Loo.f                                     false
+	 *      17     7           (loss due to the next object alignment)
+	 */
 	@Test
 	public void test2(){
 		System.out.println("test2 start");
 		Loo l=new Loo();
 		System.out.println(ClassLayout.parseInstance(l).toPrintable());
-		synchronized (l){
+		synchronized (l){//锁住的是对象 会修改对象头
 			System.out.println("locked----------------------------");
 			System.out.println(ClassLayout.parseInstance(l).toPrintable());
 		}
 		System.out.println("ok");
 	}
 
-
+	public static void main(String[] args) {
+		System.out.println("---");
+		Thread.currentThread().interrupt();
+	}
 }
