@@ -1,5 +1,6 @@
 package com.hyj.demo.base;
 
 public class Loo {
-    boolean i;
+    int i;
+    boolean f;
 }
