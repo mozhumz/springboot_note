@@ -1,11 +1,8 @@
 处理数据库中如果不存在则插入，存在则更新：
 PostgreSQL中
-INSERT INTO tableName (列1, 列2,…) VALUES(值1, 值2,…) ON conflict(主键字段) do UPDATE set 列1=值1,列2=值2 … ;
+INSERT INTO tableName (列1, 列2,…) VALUES(值1, 值2,…) ON conflict(主键字段...) do UPDATE set 列1=值1,列2=值2 … ;
 
 Mysql中
 INSERT INTO tableName (列1, 列2,…) VALUES(值1, 值2,…) ON DUPLICATE KEY UPDATE 列1=值1,列2=值2 … ;
 
 注意：两者都要求操作的表有主键！
-————————————————
-版权声明：本文为CSDN博主「獬豸xz」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/Happy52Wang/article/details/90413184
